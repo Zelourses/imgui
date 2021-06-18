@@ -1,7 +1,8 @@
 project "ImGUI"
 	kind "StaticLib"
 	language "C++"
-	staticruntime "off"
+	cppdialect "C++17"
+	staticruntime "on"
 
 	targetdir ("out/"..outputDir.. "/%{prj.name}")
 	objdir ("out/build/"..outputDir.. "/%{prj.name}")
@@ -16,18 +17,15 @@ project "ImGUI"
 		"imstb_rectpack.h",
 		"imstb_textedit.h",
 		"imstb_truetype.h",
-		"imgui_tables.cpp"
+		"imgui_tables.cpp",
 		"imgui_demo.cpp"
 	}
 
 	filter "system:windows"
 		systemversion "latest"
-		cppdialect "C++17"
 
-	filter "system:linux"
+	filter "system:linux" --Hope it's right
 		pic "On"
-		systemversion "latest"
-		cppdialect "C++17"
 
 	filter "configurations:Debug"
 		runtime "Debug"
