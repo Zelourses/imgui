@@ -1,8 +1,8 @@
 project "ImGUI"
 	kind "StaticLib"
 	language "C++"
-	cppdialect "C++17"
-	staticruntime "on"
+	cppdialect "C++latest"
+	staticruntime "off"
 
 	targetdir ("out/"..outputDir.. "/%{prj.name}")
 	objdir ("out/build/"..outputDir.. "/%{prj.name}")
